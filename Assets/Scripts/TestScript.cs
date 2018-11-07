@@ -9,10 +9,10 @@ public class TestScript : MonoBehaviour
 
     private int numberOfRooms = 150;
 
-    private int roomMinWidth = 9;
-    private int roomMaxWidth = 26;
-    private int roomMinHeight = 4;
-    private int roomMaxHeight = 16;
+    private int roomMinWidth = 4;
+    private int roomMaxWidth = 40;
+    private int roomMinHeight = 3;
+    private int roomMaxHeight = 20;
 
     private RectInt[] rooms;
 
@@ -35,7 +35,7 @@ public class TestScript : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-        if (time > 0.05f)
+        if (time > 0.01f)
         {
             time = 0f;
             Seperation();
