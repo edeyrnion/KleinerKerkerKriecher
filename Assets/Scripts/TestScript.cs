@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,7 +20,7 @@ public class TestScript : MonoBehaviour
     private RectInt[] rects;
     public RectInt[] Rects => rects;
 
-    private List<RectInt> rooms = new List<RectInt>(16);
+    private List<RectInt> rooms;
     public List<RectInt> Rooms => rooms;
 
     private enum Status { Creation, Seperation, Selection, Paths }
@@ -31,9 +30,14 @@ public class TestScript : MonoBehaviour
     private int counter = 0;
     private bool done = false;
 
-    private void Start()
+    private void Awake()
     {
         rects = new RectInt[numberOfRooms];
+        rooms = new List<RectInt>(16);
+    }
+
+    private void Start()
+    {
         SetStatus(Status.Creation);
 
         bigRommThresholdWidth = (int)(((roomMinWidth + roomMaxWidth) / 2) * 1.25f);
@@ -105,7 +109,7 @@ public class TestScript : MonoBehaviour
                 float distanceX = Mathf.Abs(rects[i].center.x - rects[j].center.x);
                 float distanceY = Mathf.Abs(rects[i].center.y - rects[j].center.y);
 
-                if (distanceX < extendX && distanceY < extendY)
+                if (distanceX - 1 < extendX && distanceY - 1 < extendY)
                 {
                     Vector2 direction = rects[j].position - rects[i].position;
                     avgDirection += direction.normalized;
@@ -153,19 +157,6 @@ public class TestScript : MonoBehaviour
         }
     }
 
-    private void DrawRect(RectInt r)
-    {
-        Vector3 p1 = new Vector3(r.xMin, 0, r.yMin);
-        Vector3 p2 = new Vector3(r.xMin, 0, r.yMax);
-        Vector3 p3 = new Vector3(r.xMax, 0, r.yMax);
-        Vector3 p4 = new Vector3(r.xMax, 0, r.yMin);
-
-        Debug.DrawLine(p1, p2);
-        Debug.DrawLine(p2, p3);
-        Debug.DrawLine(p3, p4);
-        Debug.DrawLine(p4, p1);
-    }
-
     private void SetStatus(Status s)
     {
         status = s;
@@ -176,8 +167,8 @@ public class TestScript : MonoBehaviour
     {
         counter = 0;
         done = false;
-        rects = new RectInt[numberOfRooms];
-        rooms = new List<RectInt>(16);
+        Array.Clear(rects, 0, rects.Length);
+        rooms.Clear();
         SetStatus(Status.Creation);
     }
 }

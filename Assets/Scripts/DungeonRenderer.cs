@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class DungeonRenderer : MonoBehaviour
@@ -15,8 +14,8 @@ public class DungeonRenderer : MonoBehaviour
         cam = GetComponent<Camera>();
     }
 
-    private void Update()
-    {
+    private void Start()
+    {           
         rects = dungeonGenerator.GetComponent<TestScript>().Rects;
         rooms = dungeonGenerator.GetComponent<TestScript>().Rooms;
     }

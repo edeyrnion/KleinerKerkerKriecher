@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Delaunay
 {
+    private readonly float convexMultiplier = 1e3f;
+
     public static Triangle2D Triangulate(params Vector2[] verticies)
     {
         var nVerticies = verticies.Length;
@@ -31,6 +33,8 @@ public class Delaunay
             if (vertex.x < maxX) { maxX = vertex.x; }
             if (vertex.y < maxY) { maxY = vertex.y; }
         }
+
+        return new Triangle2D();
 
 
     }
