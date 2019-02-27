@@ -8,10 +8,11 @@ Unity 2018.3 or higher
 
 ## How to run
 
-This is a demo to demonstrate a method of procedural map generation using several algorithms. Open the projekt. Open the project in Unity and run.
+Open the project in Unity and run.
 
 ## What it does
 
+A demonstration of procedural map generation using several algorithms.
 
 ![Image 1](/screens/img1.jpg?raw=true)
 
