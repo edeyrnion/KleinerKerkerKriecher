@@ -14,13 +14,8 @@ Open the project in Unity and run.
 
 A demonstration of procedural map generation using several algorithms.
 
-![Image 1](/screens/img1.jpg?raw=true)
+![Image 1](/pdg.gif?raw=true)
 
-
-![Image 1](/screens/img1.jpg?raw=true)
-
-
-![Image 1](/screens/img1.jpg?raw=true)
 
 ## Implemented
 
