@@ -24,9 +24,9 @@ A demonstration of procedural map generation using several algorithms.
 
 ## Implemented
 
-- [x] Finish my changes
-- [x] Push my commits to GitHub
-- [x] Open a pull request
-- [ ] Open a pull request
-- [ ] Open a pull request
-- [ ] Open a pull request
+- [x] Random room generation
+- [x] Separation of rooms
+- [x] Selection of big rooms
+- [ ] Corridor generation
+- [ ] Adding small rooms to corridors
+- [ ] Generating 3D map
