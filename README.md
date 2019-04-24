@@ -4,7 +4,7 @@ This Project is focused on procedural map generation for 3D Dungeon Crawler.
 
 ## Requirements
 
-Unity 2018.3 or higher
+Unity 2018.2.21f1 or higher
 
 ## How to run
 
